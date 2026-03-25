@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Board } from './board.model';
 import { BoardStatus } from './board.status';
 import { v1 as uuid } from 'uuid';
+import { CreateBoardDto } from './dto/create-board.dto';
 
 @Injectable()
 export class BoardsService {
@@ -11,11 +12,11 @@ export class BoardsService {
     return this.boards;
   }
 
-  createBoard(title: string, description: string) {
+  createBoard(createBoardDto: CreateBoardDto): Board {
     const board: Board = {
       id: uuid(),
-      title,
-      description,
+      title: createBoardDto.title,
+      description: createBoardDto.description,
       status: BoardStatus.PUBLIC,
     };
 
