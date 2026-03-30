@@ -33,7 +33,7 @@ export class BoardsService {
   }
 
   updateBoardStatus(id: string, status: BoardStatus): void {
-    const board = this.boards.find((board) => board.id === id);
+    const board: Board | undefined = this.boards.find((board) => board.id === id);
     if (board) {
       board.status = status;
     }
