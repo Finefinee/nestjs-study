@@ -47,11 +47,7 @@ export class BoardsService {
   }
 
   updateBoardStatus(id: string, status: BoardStatus): void {
-    const board: Board | undefined = this.boards.find(
-      (board: Board) => board.id === id,
-    );
-    if (board) {
-      board.status = status;
-    }
+    const board: Board = this.getBoardById(id);
+    board.status = status;
   }
 }
