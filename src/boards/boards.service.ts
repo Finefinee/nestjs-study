@@ -8,7 +8,7 @@ import { CreateBoardDto } from './dto/create-board.dto';
 export class BoardsService {
   private boards: Board[] = [];
 
-  getAllBoards() {
+  getAllBoards(): Board[] {
     return this.boards;
   }
 

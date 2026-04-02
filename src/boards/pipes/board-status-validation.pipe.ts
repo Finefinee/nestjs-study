@@ -20,7 +20,7 @@ export class BoardStatusValidationPipe implements PipeTransform {
   }
 
   private isStatusValid(value: any) {
-    const index = this.StatusOptions.indexOf(value);
+    const index: number = this.StatusOptions.indexOf(value);
     return index !== -1;
   }
 }
